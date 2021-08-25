@@ -9,8 +9,8 @@ private:
 	int age;		//나이
 
 public:
-	person(char* stname, int stage) : age(stage) {
-		strcpy(name, stname);
+	person(char* name, int age) : age(age) {
+		strcpy(name, name);
 	}
 	void whatname() const {
 		cout << "학생 이름은 ? " << name << endl;
@@ -23,15 +23,17 @@ public:
 class student : public person
 {
 private:
-	double kor;
-	double eng;
-	double avg;
-	double tot;
+	double kor, eng;
+	double avg, tot;
 public:
+	student(char* name, int age, double kor, double eng, double avg, double tot)
+		:person(name,age)
+	{
 
+	}
 };
 
-int main()
+int main(char* name, int age)
 {
 	
 	return 0;
